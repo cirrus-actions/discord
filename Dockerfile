@@ -11,5 +11,5 @@ LABEL "com.github.actions.color"="purple"
 
 RUN apk --no-cache add jq bash curl git
 
-ADD discordhook.sh /discordhook.sh
-ENTRYPOINT ["/discordhook.sh"]
+ADD hooks.sh /hooks.sh
+ENTRYPOINT ["/hooks.sh"]
