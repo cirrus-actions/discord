@@ -58,5 +58,8 @@ WEBHOOK_DATA='{
   } ]
 }'
 
+# Log that we will now try to send the Webhook:
+echo -e "[Webhook]: Sending webhook to Discord...\\n";
+
 (curl --fail --progress-bar -A "Cirrus-CI-Webhook" -H Content-Type:application/json -H X-Author:jumbocakeyumyum#0001 -d "$WEBHOOK_DATA" "$WEBHOOK_URL" \
   && echo -e "\\n[Webhook]: Successfully sent the webhook.") || echo -e "\\n[Webhook]: Unable to send webhook (failed)."
