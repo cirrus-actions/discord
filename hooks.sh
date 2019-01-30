@@ -4,6 +4,7 @@
 # Setup Git stuff:
 git config --global user.email "action@github.com"
 git config --global user.name "GitHub Action"
+git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
 
 # Build passed:
 EMBED_COLOR=3066993
