@@ -14,7 +14,7 @@ STATUS_MESSAGE="Build Passed"
 CREDITS="This was newly committed."
 
 # Cirrus CI Logo:
-LOGO_URL"https://avatars1.githubusercontent.com/u/29414678?v=4"
+LOGO_URL="https://avatars1.githubusercontent.com/u/29414678?v=4"
 
 # Check if variable is null
 if [ -z "$WEBHOOK_URL" ]; then
