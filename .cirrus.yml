@@ -1,0 +1,12 @@
+task:
+  name: Test
+  container: 
+    image: node:latest
+    cpu: 4
+    memory: 10G
+  env:
+    WEBHOOK_URL: https://api.rdil.rocks/input?return=worked&token=null
+  script: 
+    - "chmod +x hooks.sh"
+    - "./hooks.sh"
+  
