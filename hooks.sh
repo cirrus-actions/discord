@@ -18,14 +18,7 @@ LOGO_URL="https://avatars1.githubusercontent.com/u/29414678?v=4"
 
 # Check if variable is null
 if [ -z "$WEBHOOK_URL" ]; then
-  echo -e "WARNING!!\nYou need to put WEBHOOK_URL as am environment variable!" && exit
-fi
-
-# Test to see if this is a pull request:
-if [[ $CIRRUS_BRANCH != 'master' ]]; then
-  URL="https://github.com/$CIRRUS_REPO_FULL_NAME/pull/$CIRRUS_PR"
-else
-  URL="https://github.com/$CIRRUS_REPO_FULL_NAME"
+  echo -e "WARNING!!\nYou need to pass WEBHOOK_URL to the action!!" && exit
 fi
 
 # Webhook data:
@@ -35,12 +28,12 @@ WEBHOOK_DATA='{
   "embeds": [ {
     "color": '$EMBED_COLOR',
     "author": {
-      "name": "Job #'"$CIRRUS_BUILD_ID"' (Task ID: #'"$CIRRUS_TASK_ID"') - '"$CIRRUS_REPO_FULL_NAME"'",
+      "name": "Job Triggered by: #'"$GITHUB_ACTOR"' in '"$GITHUB_REPOSITORY"'",
       "url": "'"$CIRRUS_WORKING_DIR"'",
       "icon_url": "'$LOGO_URL'"
     },
     "title": "'"$CIRRUS_CHANGE_MESSAGE"'",
-    "url": "'"$URL"'",
+    "url": "https://github.com/'$GITHUB_REPOSITORY'",
     "description": "'"${CIRRUS_CHANGE_MESSAGE//$'\n'/ }"\\n\\n"$CREDITS"'",
     "fields": [
       {
