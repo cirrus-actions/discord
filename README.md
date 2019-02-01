@@ -2,6 +2,8 @@
 
 Discord webhook system with GitHub Actions. 
 
+[![Cirrus CI Build Status](https://api.cirrus-ci.com/github/cirrus-actions/discord.svg?branch=master)](https://cirrus-ci.com)
+
 ## Using  
 
 Right now the project is not complete and is still in prototype phases.  
