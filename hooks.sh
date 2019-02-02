@@ -43,7 +43,7 @@ WEBHOOK_DATA='{
       },
       {
         "name": "Branch",
-        "value": "'"[\`$CIRRUS_BRANCH\`](https://github.com/$CIRRUS_REPO_FULL_NAME/tree/$CIRRUS_BRANCH)"'",
+        "value": "'"[\`$CIRRUS_BRANCH\`](https://github.com/$GITHUB_REPOSITORY/tree/$CIRRUS_BRANCH)"'",
         "inline": true
       }
     ],
