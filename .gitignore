@@ -1,1 +1,4 @@
-.idea/
+.vscode/
+.idea/workspace.xml
+*.tmp
+.idea/dictionaries/

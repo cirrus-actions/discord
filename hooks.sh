@@ -34,7 +34,7 @@ WEBHOOK_DATA='{
     },
     "title": "'"$CREDITS"'",
     "url": "https://github.com/'$GITHUB_REPOSITORY'",
-    "description": "'"${CIRRUS_CHANGE_MESSAGE//$'\n'/ }"\\n\\n"$CREDITS"'",
+    "description": "'"${GITHUB_SHA//$'\n'/ }"\\n\\n"$CREDITS"'",
     "fields": [
       {
         "name": "Commit",
