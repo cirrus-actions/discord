@@ -29,10 +29,10 @@ WEBHOOK_DATA='{
     "color": '$EMBED_COLOR',
     "author": {
       "name": "Job Triggered by: #'"$GITHUB_ACTOR"' in '"$GITHUB_REPOSITORY"'",
-      "url": "'"$CIRRUS_WORKING_DIR"'",
+      "url": "https://cirrus-ci.com",
       "icon_url": "'$LOGO_URL'"
     },
-    "title": "'"$CIRRUS_CHANGE_MESSAGE"'",
+    "title": "'"$CREDITS"'",
     "url": "https://github.com/'$GITHUB_REPOSITORY'",
     "description": "'"${CIRRUS_CHANGE_MESSAGE//$'\n'/ }"\\n\\n"$CREDITS"'",
     "fields": [
