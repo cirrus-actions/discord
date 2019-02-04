@@ -38,7 +38,7 @@ WEBHOOK_DATA='{
     "fields": [
       {
         "name": "Commit",
-        "value": "", # todo: add value
+        "value": "'"$GITHUB_SHA"'",
         "inline": true
       },
       {
