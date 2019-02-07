@@ -6,9 +6,8 @@ git config --global user.email "action@github.com"
 git config --global user.name "GitHub Action"
 git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git
 
-# Build passed:
 EMBED_COLOR=3066993
-STATUS_MESSAGE="Build Passed"
+STATUS_MESSAGE="New commit"
 
 # Credits (not author, just leftover from port):
 CREDITS="This was newly committed."
@@ -18,7 +17,7 @@ LOGO_URL="https://avatars1.githubusercontent.com/u/29414678?v=4"
 
 # Check if variable is null
 if [ -z "$WEBHOOK_URL" ]; then
-  echo -e "WARNING!!\nYou need to pass WEBHOOK_URL to the action!!" && exit
+  echo -e "WARNING!!\nYou need to pass WEBHOOK_URL to the action!!!" && exit
 fi
 
 # Webhook data:
@@ -42,8 +41,8 @@ WEBHOOK_DATA='{
         "inline": true
       },
       {
-        "name": "Branch",
-        "value": "'"[\`$CIRRUS_BRANCH\`](https://github.com/$GITHUB_REPOSITORY/tree/$CIRRUS_BRANCH)"'",
+        "name": "User",
+        "value": "'"[\`$GITHUB_ACTOR\`](https://github.com/$GITHUB_ACTOR)"'",
         "inline": true
       }
     ],
