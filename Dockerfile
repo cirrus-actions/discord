@@ -1,8 +1,8 @@
 FROM alpine:latest
 
 LABEL version="0.1.0"
-LABEL repository="http://github.com/cirrus-actions/discord"
-LABEL homepage="http://github.com/cirrus-actions/discord"
+LABEL repository="https://github.com/cirrus-actions/discord"
+LABEL homepage="https://github.com/cirrus-actions/discord"
 LABEL maintainer="Cirrus Labs"
 LABEL "com.github.actions.name"="Discord Build Webhook"
 LABEL "com.github.actions.description"="Sends if the build passed to a Discord webhook"
