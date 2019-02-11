@@ -22,12 +22,12 @@ WEBHOOK_DATA='{
     "color": '$EMBED_COLOR',
     "author": {
       "name": "Check Suite Triggered by '"$GITHUB_ACTOR"' in '"$GITHUB_REPOSITORY"'",
-      "url": "https://github.com/$",
+      "url": "https://github.com/$GITHUB_REPOSITORY",
       "icon_url": "'$LOGO_URL'"
     },
-    "title": "Repository",
+    "title": "Information:",
     "url": "https://github.com/'$GITHUB_REPOSITORY'",
-    "description": "The GitHub Repository",
+    "description": "--------------",
     "fields": [
       {
         "name": "Commit",
