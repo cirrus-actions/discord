@@ -7,14 +7,11 @@ then
   STATUS_MESSAGE="Check suite passing!"
   EMBED_COLOR=3066993
 else
-  STATUS_MESSAGE="Check suite failing."
+  STATUS_MESSAGE="Check suite failing or unknown."
   EMBED_COLOR=15158332
 fi
 
-# Credits (not author, just leftover from port):
 CREDITS="This was newly checked."
-
-# Cirrus CI Logo:
 LOGO_URL="https://avatars1.githubusercontent.com/u/29414678?v=4"
 
 # Webhook data:
@@ -24,13 +21,13 @@ WEBHOOK_DATA='{
   "embeds": [ {
     "color": '$EMBED_COLOR',
     "author": {
-      "name": "Check Suite Triggered by: #'"$GITHUB_ACTOR"' in '"$GITHUB_REPOSITORY"'",
-      "url": "https://github.com",
+      "name": "Check Suite Triggered by '"$GITHUB_ACTOR"' in '"$GITHUB_REPOSITORY"'",
+      "url": "https://github.com/$",
       "icon_url": "'$LOGO_URL'"
     },
-    "title": "'"$CREDITS"'",
+    "title": "Repository",
     "url": "https://github.com/'$GITHUB_REPOSITORY'",
-    "description": "'"${GITHUB_SHA//$'\n'/ }"\\n\\n"$CREDITS"'",
+    "description": "The GitHub Repository",
     "fields": [
       {
         "name": "Commit",
@@ -47,5 +44,12 @@ WEBHOOK_DATA='{
   } ]
 }'
 
-# Send the hook:
-curl --fail -A "GitHub-Actions-Webhook" -H Content-Type:application/json -H X-Author:jumbocakeyumyum#0001 -d "$WEBHOOK_DATA" "$WEBHOOK_URL"
+# Check if user has passed the hook URL:
+if [ -z '$WEBHOOK_URL' ]
+then
+  exit 1
+else
+  # Send the hook:
+  curl --fail -A "GitHub-Actions-Webhook" -H Content-Type:application/json -H X-Author:jumbocakeyumyum#0001 -d "$WEBHOOK_DATA" "$WEBHOOK_URL"
+  exit $?
+fi
