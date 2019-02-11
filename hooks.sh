@@ -1,5 +1,6 @@
 #!/bin/bash
 # Copyright (c) 2019-present CirrusLabs
+set -e
 
 # check if it passed or not
 if [ jq -r ".check_suite.conclusion" "$GITHUB_EVENT_PATH" | grep -Eq "^success$" ]
@@ -21,7 +22,7 @@ WEBHOOK_DATA='{
   "embeds": [ {
     "color": '$EMBED_COLOR',
     "author": {
-      "name": "Check Suite Triggered by '"$GITHUB_ACTOR"' in '"$GITHUB_REPOSITORY"'",
+      "name": "Check Suite triggered by '"$GITHUB_ACTOR"' in '"$GITHUB_REPOSITORY"'",
       "url": "https://github.com/$GITHUB_REPOSITORY",
       "icon_url": "'$LOGO_URL'"
     },
@@ -35,7 +36,7 @@ WEBHOOK_DATA='{
         "inline": true
       },
       {
-        "name": "User",
+        "name": "Author",
         "value": "'"[\`$GITHUB_ACTOR\`](https://github.com/$GITHUB_ACTOR)"'",
         "inline": true
       }
@@ -49,7 +50,5 @@ if [ -z '$WEBHOOK_URL' ]
 then
   exit 1
 else
-  # Send the hook:
   curl --fail -A "GitHub-Actions-Webhook" -H Content-Type:application/json -H X-Author:jumbocakeyumyum#0001 -d "$WEBHOOK_DATA" "$WEBHOOK_URL"
-  exit $?
 fi
