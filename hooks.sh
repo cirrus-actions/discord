@@ -1,11 +1,6 @@
 #!/bin/bash
 # Copyright (c) 2019-present CirrusLabs
 
-# Setup Git stuff:
-git config --global user.email "action@github.com"
-git config --global user.name "GitHub Action"
-git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git
-
 # check if it passed or not
 if [ jq -r ".check_suite.conclusion" "$GITHUB_EVENT_PATH" | grep -Eq "^success$" ]
 then
@@ -16,10 +11,8 @@ else
   EMBED_COLOR=15158332
 fi
 
-STATUS_MESSAGE="New commit"
-
 # Credits (not author, just leftover from port):
-CREDITS="This was newly committed."
+CREDITS="This was newly checked."
 
 # Cirrus CI Logo:
 LOGO_URL="https://avatars1.githubusercontent.com/u/29414678?v=4"
