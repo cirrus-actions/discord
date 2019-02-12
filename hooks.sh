@@ -3,7 +3,7 @@
 set -e
 
 # check if it passed or not
-if [ jq -r ".check_suite.conclusion" "$GITHUB_EVENT_PATH" | grep -Eq "^success$" ]; then
+if [[ "$(jq -r ".check_suite.conclusion" "$GITHUB_EVENT_PATH")" == "success" ]]; then
   STATUS_MESSAGE="Check suite passing!"
   EMBED_COLOR=3066993
 else
