@@ -12,18 +12,17 @@ else
 fi
 
 CREDITS="This was newly checked."
-LOGO_URL="https://avatars1.githubusercontent.com/u/29414678?v=4"
 
 # Webhook data:
 WEBHOOK_DATA='{
   "username": "GitHub Actions",
-  "avatar_url": '$LOGO_URL',
+  "avatar_url": 'https://avatars1.githubusercontent.com/u/29414678?v=4',
   "embeds": [ {
     "color": '$EMBED_COLOR',
     "author": {
       "name": "Check Suite triggered by '"$GITHUB_ACTOR"' in '"$GITHUB_REPOSITORY"'",
       "url": "https://github.com/$GITHUB_REPOSITORY",
-      "icon_url": "'$LOGO_URL'"
+      "icon_url": "https://avatars1.githubusercontent.com/u/29414678?v=4"
     },
     "title": "Information:",
     "url": "https://github.com/'$GITHUB_REPOSITORY'",
@@ -44,4 +43,4 @@ WEBHOOK_DATA='{
   } ]
 }'
 
-curl --fail -A "GitHub-Actions-Webhook" -H Content-Type:application/json -H X-Author:jumbocakeyumyum#0001 -d "$WEBHOOK_DATA" "$WEBHOOK_URL"
+curl --fail -A "Actions-Webhook" -H Content-Type:application/json -H X-Author:jumbocakeyumyum#0001 -d "$WEBHOOK_DATA" "$WEBHOOK_URL"
