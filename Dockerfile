@@ -13,3 +13,4 @@ RUN apk --no-cache add jq bash curl
 
 ADD hooks.sh /hooks.sh
 ENTRYPOINT ["/hooks.sh"]
+RUN chmod +x /hooks.sh
