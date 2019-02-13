@@ -16,12 +16,12 @@ CREDITS="This was newly checked."
 # Webhook data:
 WEBHOOK_DATA='{
   "username": "GitHub Actions",
-  "avatar_url": 'https://avatars1.githubusercontent.com/u/29414678?v=4',
+  "avatar_url": "https://avatars1.githubusercontent.com/u/29414678?v=4",
   "embeds": [ {
     "color": '$EMBED_COLOR',
     "author": {
       "name": "Check Suite triggered by '"$GITHUB_ACTOR"' in '"$GITHUB_REPOSITORY"'",
-      "url": "https://github.com/$GITHUB_REPOSITORY",
+      "url": "https://github.com/'$GITHUB_REPOSITORY'",
       "icon_url": "https://avatars1.githubusercontent.com/u/29414678?v=4"
     },
     "title": "Information:",
