@@ -24,9 +24,9 @@ WEBHOOK_DATA='{
       "url": "https://github.com/'$GITHUB_REPOSITORY'",
       "icon_url": "https://avatars1.githubusercontent.com/u/29414678?v=4"
     },
-    "title": "Information:",
+    "title": "______________",
     "url": "https://github.com/'$GITHUB_REPOSITORY'",
-    "description": "--------------",
+    "description": "Information:",
     "fields": [
       {
         "name": "Commit",
@@ -36,7 +36,7 @@ WEBHOOK_DATA='{
       {
         "name": "Author",
         "value": "'"[\`$GITHUB_ACTOR\`](https://github.com/$GITHUB_ACTOR)"'",
-        "inline": true
+        "inline": false
       }
     ],
     "timestamp": ""
