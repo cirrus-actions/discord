@@ -11,8 +11,6 @@ else
   EMBED_COLOR=15158332
 fi
 
-CREDITS="This was newly checked."
-
 # Webhook data:
 WEBHOOK_DATA='{
   "username": "GitHub Actions",
@@ -20,13 +18,13 @@ WEBHOOK_DATA='{
   "embeds": [ {
     "color": '$EMBED_COLOR',
     "author": {
-      "name": "Check Suite triggered by '"$GITHUB_ACTOR"' in '"$GITHUB_REPOSITORY"'",
+      "name": "Check Suite triggered by '"$GITHUB_ACTOR"'",
       "url": "https://github.com/'$GITHUB_REPOSITORY'",
       "icon_url": "https://avatars1.githubusercontent.com/u/29414678?v=4"
     },
-    "title": "______________",
+    "title": "View Repository",
     "url": "https://github.com/'$GITHUB_REPOSITORY'",
-    "description": "Information:",
+    "description": "Check Suite Info:",
     "fields": [
       {
         "name": "Commit",
