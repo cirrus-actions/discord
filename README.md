@@ -6,13 +6,12 @@ Discord webhook system with GitHub Actions.
 
 ## Using  
 
-Right now the project is not complete and is still in prototype phases.  
 This is a simple GitHub action that allows to send signals to Discord Webhooks when a GitHub Check Suite completes. This requires a secret environment variable:  
 `WEBHOOK_URL` - The Webhook to send the info to.  
 
 ## Example  
 
-This example `main.workflow` will work once we are finished:
+This example `main.workflow` file works:
 ```
 workflow "Discord Webhook" {
   on = "check_suite"
@@ -25,4 +24,10 @@ action "Hook" {
 }
 ```
 
-**WIP!!**
+## FAQ
+
+Q: Help! Webhooks aren't being sent and I don't see the action running!  
+A: Have you signed up for the actions beta?  It is required to use this.  
+
+Q: How easy is it to set this up?  
+A: Very!  Just add your `main.workflow`, set up a new webhook in Discord, and watch the magic happen!  
