@@ -43,4 +43,4 @@ WEBHOOK_DATA='{
   } ]
 }'
 
-curl --fail -A "Actions-Webhook" -H Content-Type:application/json -H X-Author:jumbocakeyumyum#0001 -d "$WEBHOOK_DATA" "$WEBHOOK_URL"
+curl --fail -A "Actions-Webhook" -H Content-Type:application/json -d "$WEBHOOK_DATA" "$WEBHOOK_URL"
