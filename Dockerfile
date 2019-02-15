@@ -6,7 +6,7 @@ LABEL version="1.0.0" \
       maintainer="Cirrus Labs" \
       "com.github.actions.name"="Discord Webhook" \
       "com.github.actions.description"="Sends if a check suite passed to a Discord webhook" \
-      "com.github.actions.icon"="cloud" \
+      "com.github.actions.icon"="activity" \
       "com.github.actions.color"="purple"
 # Add needed programs via APK:
 RUN apk --no-cache add jq bash curl
