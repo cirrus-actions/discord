@@ -12,14 +12,15 @@ This is a simple GitHub action that allows to send signals to Discord Webhooks w
 ## Example  
 
 This example `main.workflow` file works:
+
 ```
-workflow "Discord Webhook" {
+workflow "Discord" {
   on = "check_suite"
-  resolves = "Hook"
+  resolves = "Discord Webhook"
 }
 
-action "Hook" {
-  uses = "docker://the-docker-image"
+action "Discord Webhook" {
+  uses = "docker://cirrusactions/discord:latest"
   secrets = ["WEBHOOK_URL"]
 }
 ```
@@ -30,4 +31,4 @@ Q: Help! Webhooks aren't being sent and I don't see the action running!
 A: Have you signed up for the actions beta?  It is required to use this.  
 
 Q: How easy is it to set this up?  
-A: Very!  Just add your `main.workflow`, set up a new webhook in Discord, and watch the magic happen!  
+A: Very! Just add your `main.workflow`, set up a new webhook in Discord, and watch the magic happen!  
