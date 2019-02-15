@@ -11,6 +11,8 @@ else
   EMBED_COLOR=15158332
 fi
 
+COMMIT=jq -r ".check_suite.head_commin.message" "$GITHUB_EVENT_PATH"
+
 # Webhook data:
 WEBHOOK_DATA='{
   "username": "GitHub Actions",
@@ -28,7 +30,7 @@ WEBHOOK_DATA='{
     "fields": [
       {
         "name": "Commit",
-        "value": "'"$GITHUB_SHA"'",
+        "value": "'"$COMMIT"'",
         "inline": true
       },
       {
