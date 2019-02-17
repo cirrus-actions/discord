@@ -11,7 +11,7 @@ else
   EMBED_COLOR=15158332
 fi
 
-COMMIT=jq -r ".check_suite.head_commin.message" "$GITHUB_EVENT_PATH"
+COMMIT=$(jq -r ".check_suite.head_commin.message" "$GITHUB_EVENT_PATH")
 
 # Webhook data:
 WEBHOOK_DATA='{
